@@ -1,0 +1,8 @@
+# Python cache
+__pycache__/
+
+# Jetbrains IDE
+.idea/
+
+# VSCode
+.vscode
