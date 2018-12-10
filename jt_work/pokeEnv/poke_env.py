@@ -20,11 +20,14 @@ class poke_env(gym.env):
         super().__init__()
         #action_space, observation_space, reward_rangeの設定する
         self.action_space = gym.spaces.Discrete(4)  # 攻撃技4つ
-        self.observation_space = gym.spaces.Box(0.0, 1.0, shape=2, dtype=np.float32) # 超簡単化のため自分のポケモンのHP,相手のポケモンのHPだけ観測できる形にする
+        self.observation_space = gym.spaces.Box(0.0, 1.0, shape=2, ,dtype=np.float32) # 超簡単化のため自分のポケモンのHP,相手のポケモンのHPだけ観測できる形にする
         self.reward_range = (-1.0, 1.0)
 
     def _step(self,action):
         ### 技を選んだ時のダメージ計算＆状態のアップデートを行う
+        ### これはエージェント視点でのstepだから自分を中心
+        ### 相手ターンのstepも記載する必要がある
+        ### ターンを進めるために必要な要素：先行後攻の処理＆ダメージ計算
         action == 1
 
 
@@ -54,9 +57,14 @@ class poke_env(gym.env):
             dam = dam
         
         return dam
+        ### ここで計算した値をそのまま報酬に使う、正規化はいれよう、1024で割る？
+        ### 倒す＝最大報酬にする
 
 
     def _get_reward(self):
         ### 削ったHPに応じて報酬を計算
+        ### 与えるダメージを報酬とするのがシンプルかも
 
 
+    def _is_done(self):
+        ### 2匹のHPを入力にして、どっちかが0以下なら終了する関数
