@@ -14,23 +14,21 @@ class poke_generator:
         battle_poke = main_df.query("no == @no")
         #print(battle_poke['attack'], battle_poke['sp_attack'])
         if battle_poke.attack.values[0] >= battle_poke.sp_attack.values[0]:
-            h_j, a_j, b_j, c_j, d_j, s_j = poke_generator.param_cal(self
-                                                    ,battle_poke['hp']
-                                                    ,battle_poke['attack']
-                                                    ,battle_poke['defence']
-                                                    ,battle_poke['sp_attack']
-                                                    ,battle_poke['sp_defence']
-                                                    ,battle_poke['speed']
-                                                    ,252, 252, 4, 0, 0, 0, 0)
+            h_j, a_j, b_j, c_j, d_j, s_j = self.param_cal(battle_poke['hp'],
+                                                          battle_poke['attack'],
+                                                          battle_poke['defence'],
+                                                          battle_poke['sp_attack'],
+                                                          battle_poke['sp_defence'],
+                                                          battle_poke['speed'],
+                                                          252, 252, 4, 0, 0, 0, 0)
         elif battle_poke.attack.values[0] < battle_poke.sp_attack.values[0]:
-            h_j, a_j, b_j, c_j, d_j, s_j = poke_generator.param_cal(self
-                                                    ,battle_poke['hp']
-                                                    ,battle_poke['attack']
-                                                    ,battle_poke['defence']
-                                                    ,battle_poke['sp_attack']
-                                                    ,battle_poke['sp_defence']
-                                                    ,battle_poke['speed']
-                                                    ,252, 0, 0, 252, 4, 0, 1)
+            h_j, a_j, b_j, c_j, d_j, s_j = self.param_cal(battle_poke['hp'],
+                                                          battle_poke['attack'],
+                                                          battle_poke['defence'],
+                                                          battle_poke['sp_attack'],
+                                                          battle_poke['sp_defence'],
+                                                          battle_poke['speed'],
+                                                          252, 0, 0, 252, 4, 0, 1)
 
         battle_poke['a_j'] = a_j
         battle_poke['b_j'] = b_j
