@@ -2,16 +2,14 @@ import sys
 import gym
 import numpy as np
 import gym.spaces
-import poke_generator
+from poke_generator import generator, param_cal
 
 
 ### 別途用意しておくもの
-# ポケモンマスタ
-# 技マスタ
-# タイプ相性マスタ
-# 性格マスタ
-### 別途書いたものはあるので、それを反映させればなんとか、、、
-### この環境限定で使えるようにこの中に書いてしまうか、、、
+# ポケモンマスタ: https://github.com/kotofurumiya/pokemon_dataからjsonデータを拝借し加工
+# 技マスタ: 自前で用意
+# タイプ相性マスタ: 自前で用意
+# 性格マスタ: poke_generatorの中に一部の性格のみ記載
 
 class poke_env(gym.env):
     ### 最大10ターンで対戦を終える、終わらなかったら引き分け扱い
@@ -19,9 +17,8 @@ class poke_env(gym.env):
 
     def __init__(self):
         ### 使用するポケモンのセット
-        self.gen = poke_generator.poke_generator()
-        self.player_poke = gen.generator(445, 1) ###ガブリアス
-        self.nonplayer_poke = gen.generator(9, 0) ###カメックス
+        self.player_poke = generator(445, 1) ###ガブリアス
+        self.nonplayer_poke = generator(9, 0) ###カメックス
 
         #action_space, observation_space, reward_rangeの設定
         self.action_space = gym.spaces.Discrete(4)  # 攻撃技4つ, 本来は交代2つもあるが割愛
@@ -30,12 +27,12 @@ class poke_env(gym.env):
 
     def _reset(self):
         ### 対戦で使うポケモンを初期化して状態を返す
-        self.player_poke = self.gen.generator(445, 1) ###ガブリアス
-        self.nonplayer_poke_ = self.gen.generator(9, 0) ###カメックス
+        self.player_poke = generator(445, 1) ###ガブリアス
+        self.nonplayer_poke_ = generator(9, 0) ###カメックス
         self.done = False
         return self._make_observation()
 
-    def _step(self,action):
+    def _step(self, action):
         ### 技を選んだ時のダメージ計算＆状態のアップデートを行う
         ### ターンを進めるために必要な要素：先行後攻の処理＆ダメージ計算
 
