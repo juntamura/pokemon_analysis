@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import json
 import math
+pd.options.mode.chained_assignment = None
 
 ### 元データのインポート
 f = open("pokemon_data.json", 'r')
@@ -27,7 +28,28 @@ data_df_rm_MegaEvo['speed'] = data_df_rm_MegaEvo['stats'].apply(lambda x : x['sp
 ### 必要なカラムだけ抽出
 new_data_df_zukan = data_df_rm_MegaEvo.loc[:,['no','name','type1','type2', 'hp', 'attack', 'defence', 'sp_attack', 'sp_defence', 'speed']]
 
+### タイプを英語表記に変更
+replace_dict =  {
+    'ノーマル' : 'NORMAL'
+    ,'ほのお' : 'FIRE'
+    ,'みず' : 'WATER'
+    ,'でんき' : 'ELECTR'
+    ,'くさ' : 'GRASS'
+    ,'こおり' : 'ICE'
+    ,'かくとう' : 'FIGHT'
+    ,'どく' : 'POISON'
+    , 'じめん' : 'GROUND'
+    ,'ひこう' : 'FLYING'
+    ,'エスパー' : 'PSYCHC'
+    ,'むし' : 'BUG'
+    ,'いわ' : 'ROCK'
+    ,'ゴースト' : 'GHOST'
+    ,'ドラゴン' : 'DRAGON'
+    ,'あく' : 'DARK'
+    ,'はがね' : 'STEEL'
+    ,'フェアリー' : 'FAIRY'}
+
+new_data_df_zukan = new_data_df_zukan.replace(replace_dict)
+
 ### 保存
 new_data_df_zukan.to_csv('pokemon_zukan_rm_MegaEvo.csv', index=False)
-
-

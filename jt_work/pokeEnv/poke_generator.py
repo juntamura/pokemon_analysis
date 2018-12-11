@@ -9,7 +9,7 @@ pd.options.mode.chained_assignment = None
 ### ACの種族値が同じ場合は意地HA252に寄せてしまう
 ### 今後詳細化できるポイント
 class poke_generator:
-    def generator(self, no):
+    def generator(self, no, is_player):
         main_df = pd.read_csv('../pokemon_zukan_rm_MegaEvo.csv')
         battle_poke = main_df.query("no == @no")
         #print(battle_poke['attack'], battle_poke['sp_attack'])
@@ -32,12 +32,14 @@ class poke_generator:
                                                     ,battle_poke['speed']
                                                     ,252, 0, 0, 252, 4, 0, 1)
 
-        battle_poke['h_j'] = h_j
         battle_poke['a_j'] = a_j
         battle_poke['b_j'] = b_j
         battle_poke['c_j'] = c_j
         battle_poke['d_j'] = d_j
         battle_poke['s_j'] = s_j
+        battle_poke['max_hp'] = h_j
+        battle_poke['now_hp'] = h_j
+        battle_poke['is_player'] = is_player
         return battle_poke
 
     def param_cal(self, h,a,b,c,d,s,h_d,a_d,b_d,c_d,d_d,s_d,personal):
@@ -84,7 +86,7 @@ class poke_generator:
 
 if __name__ == '__main__':
     tmp = poke_generator()
-    tmp_return = tmp.generator(445) ### ガブリアスのパラメータでテスト
+    tmp_return = tmp.generator(445,1) ### ガブリアスのパラメータでテスト
     print(tmp_return)
 #      no   name type1 type2   hp  attack  defence  sp_attack  sp_defence  \
 #442  445  ガブリアス  ドラゴン   じめん  108     130       95         80          85
