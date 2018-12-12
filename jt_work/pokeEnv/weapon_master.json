@@ -1,0 +1,121 @@
+{
+    "16": {
+        "A_spA": "spA",
+        "type": "FAIRY",
+        "acc": 100,
+        "name": "\u30e0\u30fc\u30f3\u30d5\u30a9\u30fc\u30b9",
+        "power": 90
+    },
+    "15": {
+        "A_spA": "spA",
+        "type": "GRASS",
+        "acc": 100,
+        "name": "\u30a8\u30ca\u30b8\u30fc\u30dc\u30fc\u30eb",
+        "power": 80
+    },
+    "2": {
+        "A_spA": "A",
+        "type": "DARK",
+        "acc": 100,
+        "name": "DD\u30e9\u30ea\u30a2\u30c3\u30c8",
+        "power": 85
+    },
+    "12": {
+        "A_spA": "spA",
+        "type": "GHOST",
+        "acc": 100,
+        "name": "\u30b7\u30e3\u30c9\u30fc\u30dc\u30fc\u30eb",
+        "power": 80
+    },
+    "7": {
+        "A_spA": "spA",
+        "type": "ICE",
+        "acc": 100,
+        "name": "\u3081\u3056\u3081\u308b\u30d1\u30ef\u30fc\u3053\u304a\u308a",
+        "power": 60
+    },
+    "8": {
+        "A_spA": "spA",
+        "type": "ELECTR",
+        "acc": 100,
+        "name": "\u30dc\u30eb\u30c8\u30c1\u30a7\u30f3\u30b8",
+        "power": 70
+    },
+    "9": {
+        "A_spA": "spA",
+        "type": "DRAGON",
+        "acc": 100,
+        "name": "\u308a\u3085\u3046\u306e\u306f\u3069\u3046",
+        "power": 85
+    },
+    "13": {
+        "A_spA": "A",
+        "type": "STEEL",
+        "acc": 100,
+        "name": "\u30d8\u30d3\u30fc\u30dc\u30f3\u30d0\u30fc",
+        "power": 120
+    },
+    "6": {
+        "A_spA": "spA",
+        "type": "ELECTR",
+        "acc": 70,
+        "name": "\u304b\u307f\u306a\u308a",
+        "power": 110
+    },
+    "1": {
+        "A_spA": "A",
+        "type": "FIRE",
+        "acc": 100,
+        "name": "\u307b\u306e\u304a\u306e\u30d1\u30f3\u30c1",
+        "power": 75
+    },
+    "14": {
+        "A_spA": "A",
+        "type": "ROCK",
+        "acc": 80,
+        "name": "\u30b9\u30c8\u30fc\u30f3\u30a8\u30c3\u30b8",
+        "power": 120
+    },
+    "17": {
+        "A_spA": "spA",
+        "type": "POISON",
+        "acc": 100,
+        "name": "\u30d8\u30c9\u30ed\u3070\u304f\u3060\u3093",
+        "power": 90
+    },
+    "10": {
+        "A_spA": "spA",
+        "type": "PSYCHC",
+        "acc": 100,
+        "name": "\u30b5\u30a4\u30b3\u30ad\u30cd\u30b7\u30b9",
+        "power": 90
+    },
+    "5": {
+        "A_spA": "spA",
+        "type": "WATER",
+        "acc": 80,
+        "name": "\u30cf\u30a4\u30c9\u30ed\u30dd\u30f3\u30d7",
+        "power": 110
+    },
+    "4": {
+        "A_spA": "A",
+        "type": "BUG",
+        "acc": 100,
+        "name": "\u3068\u3093\u307c\u304c\u3048\u308a",
+        "power": 120
+    },
+    "11": {
+        "A_spA": "spA",
+        "type": "FIRE",
+        "acc": 100,
+        "name": "\u3081\u3056\u3081\u308b\u30d1\u30ef\u30fc\u307b\u306e\u304a",
+        "power": 60
+    },
+    "3": {
+        "A_spA": "A",
+        "type": "GROUND",
+        "acc": 100,
+        "name": "\u3058\u3057\u3093",
+        "power": 100
+    }
+}
